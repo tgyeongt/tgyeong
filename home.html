@@ -6,8 +6,36 @@
     <title>TGYEONG</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
+    <script>
+        function randomString(){
 
+        let stringArr = ["Javascript", "Algorithm", "Web Crawling", 
+        "Data Analysis", "Database System", "Operating System", "Python Programming", "Java Programming"];
+        let selectString = stringArr[Math.floor(Math.random() * stringArr.length)];
+        let selectStringArr = selectString.split(""); // 단어단위로 배열 변경
+        return selectStringArr;
+        }
 
+        // 타이핑 리셋
+        function resetTyping(){
+            target. textContent = "";
+            dynamic(randomString());
+        }
+
+        // 한글자씩 텍스트 출력 함수
+        function dynamic(randomArr){
+            console.log(randomArr);
+            if(randomArr.length > 0){
+                target.textContent += randomArr.shift();
+                setTimeout(function(){
+                    dynamic(randomArr);
+                },80);
+            } 
+            else{
+                setTimeout(resetTyping, 3000)
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -29,7 +57,7 @@
                 <h1>
                 <img src="images/main_emoji.png" alt="icon" width="300"></h1>
                 <p id="dynamic" class="lg-text"></p>
-                <p class="sm-text">tgyeongt@gmail.com</p> 
+                <p class="sm-text">안녕하세요. 컴퓨터공학과 22학번 박태경입니다.</p> 
             </div>
             <div class="snsbar">
                 <ul>
@@ -39,7 +67,14 @@
                 </ul>
             </div>
         </div>
-        <script src="main.js"></script>
+        <script>
+            let target = document.querySelector("#dynamic");
+            let stringArr = ["Javascript", "Algorithm", "Web crawling", 
+            "Data Analysis", "Database System", "Operating System", "Python Programming", "Java Programming"];
+            let selectString = stringArr[Math.floor(Math.random() * stringArr.length)];
+            let selectStringArr = selectString.split("");
+            dynamic(randomString());
+        </script>
     </div>
 </body>
 </html>

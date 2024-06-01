@@ -47,23 +47,3 @@ body{
     color: #FEEE96;
 }
 
-.middle{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #3E3B2A;
-    text-align: center;
-}
-
-.lg-text{
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-.sm-text{
-    font-size: 1rem;
-    font-weight: 500;
-}

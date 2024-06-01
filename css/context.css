@@ -20,19 +20,15 @@
 .page h2 {
     font-weight: 600;
     font-size: 1.5rem;
-    color: #3E3B2A;
+    color: #c5a802;
 }
+
 .page p {
-    text-align: center;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #3E3B2A;
 }
-.page li {
-    text-align: center;
-    text-decoration: none;
-    list-style: none;
-}
+
 .page li a{
     text-decoration: none;
     color: #3E3B2A;
