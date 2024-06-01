@@ -1,0 +1,59 @@
+.title {
+    margin: 10px auto;
+    width: 80%;
+    padding-bottom: 10px;
+}
+.title h1 {
+    font-weight: 500;
+    font-size: 3rem;
+    text-align: center;
+    color: #3E3B2A;
+}
+.page {
+    padding: 30px 50px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-color: white;
+    width: 500px;
+    border-radius: 50px;
+}
+.page h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #3E3B2A;
+}
+.page p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #3E3B2A;
+}
+.page li {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+.page li a{
+    text-decoration: none;
+    color: #3E3B2A;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+#login-form > input{
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+}
+
+#login-form > input[type="submit"]{
+    color: #fff;
+    font-size: 16px;
+    background-color: #3E3B2A;
+    margin-top: 20px;
+}

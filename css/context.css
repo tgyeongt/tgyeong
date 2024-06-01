@@ -1,0 +1,41 @@
+.title {
+    margin: 10px auto;
+    width: 80%;
+    padding-bottom: 10px;
+}
+.title h1 {
+    font-weight: 500;
+    font-size: 3rem;
+    text-align: center;
+    color: #3E3B2A;
+}
+.page {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 30px 50px;
+    background-color: white;
+    width: 80%;
+    border-radius: 50px;
+}
+.page h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #3E3B2A;
+}
+.page p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #3E3B2A;
+}
+.page li {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+.page li a{
+    text-decoration: none;
+    color: #3E3B2A;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
