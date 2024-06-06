@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-
 *{
     margin:0;
     padding:0;
@@ -47,3 +46,41 @@ body{
     color: #FEEE96;
 }
 
+.title {
+    margin: 10px auto;
+    width: 80%;
+    padding-bottom: 10px;
+}
+.title h1 {
+    font-weight: 500;
+    font-size: 3rem;
+    text-align: center;
+    color: #3E3B2A;
+}
+.page {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 30px 50px;
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 50px;
+}
+.page h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #c5a802;
+}
+
+.page p {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #3E3B2A;
+}
+
+.page li a{
+    text-decoration: none;
+    color: #3E3B2A;
+    font-weight: 600;
+    font-size: 1.5rem;
+}

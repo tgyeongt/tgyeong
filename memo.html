@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/context.css">
+    <style>
+        #posts {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap; /* 가로 공간이 부족할 때 줄 바꿈 */
+            justify-content: center; /* 가로 정렬을 가운데로 */
+            gap: 10px;
+            
+        }
+
+        #postText {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 2px solid #3E3B2A;
+            outline: none;
+        }
+
+        #postButton {
+            height: 45px;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            margin-left: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #3E3B2A;
+        }
+
+        .post {
+            width: 300px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .postPage {
+            display: flex;           
+            justify-content: center;  
+        }
+
+    </style>
+
+     <script>
+        function createPost() {
+            let inputElement = document.getElementById('postText');
+            let text = inputElement.value;
+
+            if (text.trim() !== "") {
+                let postElement = document.createElement('div');
+                postElement.className = 'post'; 
+                postElement.textContent = text; 
+
+                postElement.style.backgroundColor = randomColor();
+
+                let postsContainer = document.getElementById('posts');
+                postsContainer.insertBefore(postElement, postsContainer.firstChild);
+
+                inputElement.value = '';
+            } else {
+                alert('내용을 적어주세요.');
+            }
+        }
+
+        function randomColor() {
+            const colors = ['#E4E4EB', '#9795AA', '#FEEE96', '#FEF6C9', '#96AFFF', '#C9D6FF'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><img src="images/TG_logo.svg" alt="icon" width="150" style="margin-top: 10px;" onclick="location.href='home.html'"></h1>
+            <div class="nav">
+                <ul>
+                    <li><input type="button" value="HOME" onclick="location.href='home.html'"></li>
+                    <li><input type="button" value="ABOUT" onclick="location.href='about.html'"></li>
+                    <li><input type="button" value="UNIV" onclick="location.href='univ.html'"></li>
+                    <li><input type="button" value="PLAN" onclick="location.href='plan.html'"></li>
+                    <li><input type="button" value="LOGIN" onclick="location.href='login.html'"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="title">
+            <h1>Who's There?</h1>
+        </div>
+        
+        <div class="page">
+            <div class="postPage">
+                <input type="text" id="postText" placeholder="글을 적어주세요.">
+                <button id="postButton" onclick="createPost()">POST</button>
+            </div>
+           
+            <div id="posts"></div>
+        </div>
+    </div>
+</body>
+</html>
