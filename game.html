@@ -3,45 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATCH STARS</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/context.css">
+    <title>Catch Stars</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #52526B;
+            overflow: hidden;
+        }
 
+        .nav ul li input {
+            border: none;
+            border-radius: 50px;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: transparent;
+            color: white;
+        }
+
+        .nav ul li input:hover{
+            background-color: transparent;
+            color: #FEEE96;
+        }
+
+        #gameContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #gameCanvas {
+            width: 800px;
+            height: 600px;
+            background-color: #52526B;
+        }
+
+        #score {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1><img src="images/TG_logo.svg" alt="icon" width="150" style="margin-top: 10px;" onclick="location.href='home.html'"></h1>
+            <h1><img src="images/TG_logo_white.svg" alt="icon" width="150" style="margin-top: 10px;" onclick="location.href='home.html'"></h1>
             <div class="nav">
                 <ul>
                     <li><input type="button" value="HOME" onclick="location.href='home.html'"></li>
                     <li><input type="button" value="ABOUT" onclick="location.href='about.html'"></li>
-                    <li><input type="button" value="UNIV" onclick="location.href='univ.html'"></li>
-                    <li><input type="button" value="PLAN" onclick="location.href='plan.html'"></li>
-                    <li><input type="button" value="LOGIN" onclick="location.href='login.html'"></li>
+                    <li><input type="button" value="MEMO" onclick="location.href='memo.html'"></li>
+                    <li><input type="button" value="GAME" onclick="location.href='game.html'"></li>
                 </ul>
             </div>
         </div>
-
         <div class="title">
-            <h1>Catch Stars</h1>
+            <h1 style="color: #FEEE96;">Catch Stars !</h1>
         </div>
-        <div class="page">
-            <ul>
-                <li><a href="#a1">학과</a></li>
-                <li><a href="#a2">동아리</a></li>
-                <li><a href="#a3">방학계획</a></li>
-            </ul>
-            <br>
-            <h2 id="a1">학과</a></h2>
-            <p>ddd</p>
-
-            <h2 id="a2"><a>동아리</a></h2>
-            <p>웹개발 연합동아리 "멋쟁이사자처럼"에서 12기 프론트엔드를 맡고 있다.</p>
-            <h2 id="a3"><a>방학계획</a></h2>
-            <p>ㅇㅇ</p>
+        <div id="gameContainer">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div id="score">Score: 0</div>
         </div>
-        
     </div>
+
+    <script>
+        let canvas = document.getElementById('gameCanvas');
+        let ctx = canvas.getContext('2d');
+        let scoreElement = document.getElementById('score');
+
+        // 게임 요소 초기화
+        const starRadius = 20;
+        let score = 0;
+        const stars = [];
+        const starImage = new Image();
+        starImage.src = 'images/star.png'; // 사용할 별 이미지 파일의 경로 설정
+
+        // 별 생성 함수
+        function createStar() {
+            const x = Math.random() * (canvas.width - starRadius * 2) + starRadius;
+            stars.push({ x: x, y: 0, radius: starRadius });
+        }
+
+        // 별을 그리는 함수
+        function drawStar(star) {
+            ctx.drawImage(starImage, star.x - star.radius, star.y - star.radius, starRadius * 2, starRadius * 2);
+        }
+
+        // 별의 상태를 업데이트하는 함수
+        function updateStars() {
+            for (let i = 0; i < stars.length; i++) {
+                const star = stars[i];
+                star.y += 3; // 별이 아래로 떨어짐
+                if (star.y > canvas.height) {
+                    stars.splice(i, 1); // 별이 화면을 벗어나면 배열에서 제거
+                }
+            }
+        }
+
+        // 화면을 지우고 모든 별을 그림
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // 화면을 지움
+            stars.forEach(drawStar); // 모든 별을 그림
+            updateStars(); // 별의 상태를 업데이트
+        }
+
+        // 별을 클릭했을 때 점수를 올리는 함수
+        function clickHandler(event) {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            for (let i = 0; i < stars.length; i++) {
+                const star = stars[i];
+                const distance = Math.sqrt((x - star.x) ** 2 + (y - star.y) ** 2);
+                if (distance < star.radius) {
+                    stars.splice(i, 1); // 별을 배열에서 제거
+                    score++; // 점수 증가
+                    scoreElement.textContent = `Score: ${score}`; // 점수 업데이트
+                    break;
+                }
+            }
+        }
+
+        // 게임 루프 함수
+        function gameLoop() {
+            draw();
+            requestAnimationFrame(gameLoop); // 다음 프레임 요청
+        }
+
+        // 클릭 이벤트 리스너 추가
+        canvas.addEventListener('click', clickHandler);
+
+        // 일정 간격으로 별을 생성
+        setInterval(createStar, 1000);
+        gameLoop(); // 게임 루프 시작
+
+    </script>
 </body>
 </html>

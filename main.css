@@ -14,7 +14,7 @@ body{
 }
 
 .container .header{
-    width: 80%;
+    width: 70%;
     height: 80px;
     margin: 0 auto;
     display: flex;
@@ -22,38 +22,38 @@ body{
     align-items: center;
 }
 
-.container .header h1 {
+.header h1 {
     padding-top: 5px;
 }
 
-.container .nav ul li{
+.nav ul li{
     display: inline-block;
     margin: 0 10px;
 }
 
-.container .nav ul li input{
+.nav ul li input{
     border: none;
     border-radius: 50px;
     padding: 5px 10px;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 500;
     background-color: transparent;
     color: #3E3B2A;
 }
 
-.container .nav ul li input:hover{
+.nav ul li input:hover{
     background-color: #3E3B2A;
     color: #FEEE96;
 }
 
 .title {
     margin: 10px auto;
-    width: 80%;
+    width: 70%;
     padding-bottom: 10px;
 }
 .title h1 {
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 48px;
     text-align: center;
     color: #3E3B2A;
 }
@@ -62,19 +62,20 @@ body{
     margin-bottom: 30px;
     padding: 30px 50px;
     background-color: white;
-    width: 80%;
-    height: 80%;
+    width: 70%;
     border-radius: 50px;
+    min-height: 700px;
 }
+
 .page h2 {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 24px;
     color: #c5a802;
 }
 
 .page p {
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 18px;
     color: #3E3B2A;
 }
 
@@ -82,5 +83,5 @@ body{
     text-decoration: none;
     color: #3E3B2A;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 24px;
 }

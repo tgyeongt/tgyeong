@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TGYEONG</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .middle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #3E3B2A;
+            text-align: center;
+        }
+
+        .typing {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        #dynamic{
+            position: relative;
+            display: inline-block;
+        }
+        #dynamic::after{
+            content:"";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 4px;
+            height: 100%;
+            background-color: #3E3B2A;
+        }
+
+        #dynamic.active::after{
+            display: none;
+        }
+
+        .snsbar ul li{
+            display: inline-block;
+            margin: 0 10px;
+            margin-top: 20px;
+            align-items: center;
+        }
+    </style>
     <script>
         function randomString(){
 
@@ -48,7 +90,6 @@
                     <li><input type="button" value="ABOUT" onclick="location.href='about.html'"></li>
                     <li><input type="button" value="MEMO" onclick="location.href='memo.html'"></li>
                     <li><input type="button" value="GAME" onclick="location.href='game.html'"></li>
-                    <li><input type="button" value="LOGIN" onclick="location.href='login.html'"></li>
                 </ul>
             </div>
         </div>
@@ -56,8 +97,8 @@
             <div class="herosection">
                 <h1>
                 <img src="images/main_emoji.png" alt="icon" width="300"></h1>
-                <p id="dynamic" class="lg-text"></p>
-                <p class="sm-text">안녕하세요. 컴퓨터공학과 22학번 박태경입니다.</p> 
+                <p id="dynamic" class="typing"></p>
+                <p><strong>안녕하세요 컴퓨터공학과 22학번 박태경입니다.</strong></p> 
             </div>
             <div class="snsbar">
                 <ul>
