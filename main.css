@@ -1,3 +1,4 @@
+/* 전체파일에 모두 해당하는 css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
@@ -64,13 +65,13 @@ body{
     background-color: white;
     width: 70%;
     border-radius: 50px;
-    min-height: 700px;
+    min-height: 500px;
 }
 
 .page h2 {
     font-weight: 600;
     font-size: 24px;
-    color: #c5a802;
+    color: #52526B;
 }
 
 .page p {
@@ -81,7 +82,7 @@ body{
 
 .page li a{
     text-decoration: none;
-    color: #3E3B2A;
+    color: #52526B;
     font-weight: 600;
     font-size: 24px;
 }

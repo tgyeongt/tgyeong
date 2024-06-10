@@ -44,17 +44,15 @@
             font-size: 24px;
             text-align: center;
         }
-
-        
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1><img src="images/TG_logo_white.svg" alt="icon" width="150" style="margin-top: 10px;" onclick="location.href='home.html'"></h1>
+            <h1><img src="images/TG_logo_white.svg" alt="icon" width="150" style="margin-top: 10px;" onclick="location.href='index.html'"></h1>
             <div class="nav">
                 <ul>
-                    <li><input type="button" value="HOME" onclick="location.href='home.html'"></li>
+                    <li><input type="button" value="HOME" onclick="location.href='index.html'"></li>
                     <li><input type="button" value="ABOUT" onclick="location.href='about.html'"></li>
                     <li><input type="button" value="MEMO" onclick="location.href='memo.html'"></li>
                     <li><input type="button" value="GAME" onclick="location.href='game.html'"></li>
@@ -80,7 +78,7 @@
         let score = 0;
         const stars = [];
         const starImage = new Image();
-        starImage.src = 'images/star.png'; // 사용할 별 이미지 파일의 경로 설정
+        starImage.src = 'images/star.png';
 
         // 별 생성 함수
         function createStar() {
